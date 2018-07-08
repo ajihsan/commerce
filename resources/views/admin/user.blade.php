@@ -8,7 +8,7 @@
     <h1 class="h2">Input User</h1>
   </div>
 
-  <div class="card hoverable">
+  <div class="card hoverable mb-5">
     <div class="card-body">
       <form>
         <div class="form-group">
@@ -140,30 +140,35 @@
         <div class="modal-body">
           <div class="card hoverable">
             <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <label for="nama">Name</label>
-                  <input type="text" class="form-control" id="nama" placeholder="Name">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="name">Name</span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="name">
                 </div>
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Email address</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="email">Email</span>
+                  </div>
+                  <input type="email" class="form-control" placeholder="email@example.com" aria-label="email" aria-describedby="email">
                 </div>
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-              </form>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="password">Password</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password">
+                  </div>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer bg-light">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
+</main>
 
 
 
