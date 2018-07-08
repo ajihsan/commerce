@@ -15,32 +15,48 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function shop()
     {
       $product = Product::all();
 
       return view('shop', ['product' => $product]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function index()
     {
-        dd('halo');
+      $product = Product::all();
+
+      return view('admin/product', ['product' => $product]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function create()
+    {
+      return view('admin/product/create');
+    }
+
     public function store(Request $request)
     {
-        //
+      //validasi
+      $this->validate($request, [
+      'name'          => 'required|min:4',
+      'category'      => 'required',
+      'price'         => 'required',
+      'product_image' => 'mimes:jpeg,jpg|max:10000'
+      ]);
+
+      //nyimpen gambar di storage
+      $fileName = $request->name . '.jpg';
+      $request->file('product_image')->storeAs('public/product', $fileName);
+
+      //nyimpen data di database
+      $product = new Product;
+      $product->name          = $request->name;
+      $product->category      = $request->category;
+      $product->price         = $request->price;
+      $product->product_image = $fileName;
+      $product->save();
+
+      return redirect('admin/product');
     }
 
     /**
@@ -51,7 +67,14 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+      $product = Product::find($id);
+
+      if (!$product)
+      {
+        abort(404);
+      }
+
+      return view('admin/product/single', ['product' => $product]);
     }
 
     /**
@@ -62,7 +85,14 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+      $product = Product::find($id);
+
+      if (!$product)
+      {
+        abort(404);
+      }
+
+      return view('admin/product/edit', ['product' => $product]);
     }
 
     /**
@@ -74,7 +104,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $product                = Product::find($id);
+      $product->name          = $request->name;
+      $product->category      = $request->category;
+      $product->price         = $request->price;
+      $product->product_image = $fileName;
+      $product->save();
+
+      return redirect('admin/product' . $id);
     }
 
     /**
@@ -85,6 +122,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $product = Product::find($id);
+      $product->delete();
+
+      return redirect('admin/product');
     }
 }
