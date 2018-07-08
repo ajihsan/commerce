@@ -15,17 +15,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('/shop', function () {
-//     return view('shop');
-// });
-
-<<<<<<< HEAD
+// Route User
 Route::get('shop','ShopController@index');
-Route::resource('product','ProductController');
-=======
-Route::get('shop','ProductController@index');
 
+// Route Admin
 Route::get('/home', function () {
-    return view('home');
+  return view('home');
 });
->>>>>>> ac4152afe18fa7191db1530ef86f1049dff9e0da
+
+Route::resource('product','ProductController');
