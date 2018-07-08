@@ -11,11 +11,10 @@
 |
 */
 
+// Route User
 Route::get('/', function () {
     return view('index');
 });
-
-// Route User
 Route::get('shop','ShopController@index');
 
 // Route Admin
@@ -24,3 +23,7 @@ Route::get('/home', function () {
 });
 
 Route::resource('product','ProductController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
