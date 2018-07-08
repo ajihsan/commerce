@@ -66,7 +66,7 @@
                 <li class="list-group-item">Stock: 5</li>
               </ul>
               <div class="card-body">
-                <a href="#" class="btn btn-primary btn-block">Edit</a>
+                <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">Edit</a>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@
                 <li class="list-group-item">Stock: 5</li>/
               </ul>
               <div class="card-body">
-                <a href="#" class="btn btn-primary btn-block">Edit</a>
+                <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">Edit</a>
               </div>
             </div>
           </div>
@@ -108,6 +108,48 @@
       </div>
       <div class="card-footer text-muted">
         Last updated: 2 days ago
+      </div>
+    </div>
+
+    <!-- modal content -->
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-light">
+            <h5 class="modal-title" id="edit">Edit Product</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card hoverable">
+              <div class="card-body">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="name">Product Name</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="name">
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="price">IDR</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="" aria-label="price" aria-describedby="price">
+                  </div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="stock">Stock</span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="stock" aria-describedby="stock">
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
 </main>
