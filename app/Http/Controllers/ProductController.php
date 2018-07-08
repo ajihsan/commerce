@@ -10,18 +10,7 @@ use App\Product;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function shop()
-    {
-      $product = Product::all();
-
-      return view('shop', ['product' => $product]);
-    }
-
+    
     public function index()
     {
       $product = Product::all();
