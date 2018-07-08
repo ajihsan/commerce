@@ -10,6 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <!-- <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> -->
+    <link rel="icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="/css/custom.css"  media="screen,projection"/>
 
@@ -17,61 +18,10 @@
 
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid text-center bg-dark" style="margin-bottom:0">
-      <div class="container">
-        <div class="d-flex flex-row-reverse">
 
-          {{-- tempat buat login --}}
-          <!-- Right Side Of Navbar -->
-          <ul class="navbar-nav ml-auto">
-              <!-- Authentication Links -->
-              @guest
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                  </li>
-              @else
-                  <li class="nav-item dropdown">
-                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                          {{ Auth::user()->name }} <span class="caret"></span>
-                      </a>
+    @yield('jumbotron')
 
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{ route('logout') }}"
-                             onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                              {{ __('Logout') }}
-                          </a>
-
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              @csrf
-                          </form>
-                      </div>
-                  </li>
-              @endguest
-              <li>
-                <form class="form-inline" action="/action_page.php">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" style="border-radius: 5rem;">
-                  <!-- <button class="btn btn-success" type="submit">Search</button> -->
-                </form>
-              </li>
-          </ul>
-
-
-
-
-        </div>
-
-        <a href="/"><img class="img-fluid"src="{{URL::asset('/images/logo_erigo.png')}}" class="mx-auto d-block"></a>
-
-        <!-- <h1 class="text-white">My First Bootstrap 4 Page</h1> -->
-        <!-- <p class="text-white">Resize this responsive page to see the effect!</p> -->
-      </div>
-
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-lg p-4 ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow  ">
       <!-- <a class="navbar-brand" href="#">
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Commerce
@@ -123,8 +73,11 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link"  data-toggle="modal" data-target="#login">Login</a>
           </li>
+
+
+
 
         </ul>
       </div>
@@ -138,11 +91,46 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-light">
+            <h5 class="modal-title text-center" id="login">Login User</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card hoverable">
+              <div class="card-body">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="name">Name</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="name">
+                  </div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="password">Password</span>
+                      </div>
+                      <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password">
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button type="button" class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="text/javascript" src="js/custom.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
   </body>
 </html>

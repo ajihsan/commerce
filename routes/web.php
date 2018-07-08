@@ -28,6 +28,9 @@ Route::get('/admin/user', function () {
 Route::get('/admin/product', function () {
   return view('/admin/product');
 });
+Route::get('/productoverview', function () {
+  return view('/user/overviewProduct');
+});
 
 Route::resource('product','ProductController');
 
