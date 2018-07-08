@@ -43,7 +43,7 @@
               Product
             </a>
             <div class="dropdown-content bg-dark" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="/shop">Shop</a>
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
 

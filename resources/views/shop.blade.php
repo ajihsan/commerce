@@ -56,62 +56,24 @@
             <!-- Submit -->
             <input class="btn btn-outline-secondary btn-lg" type="submit" value="Submit">
         </div>
+
         <!-- Content -->
         <div class="col-sm-9">
             <div class="row">
+              <!-- Isi Content -->
+              {{csrf_field()}}
+              @foreach ($product as $products)
                 <div class="col-sm-3">
                     <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{URL::asset('/images/shop1.jpg')}}" alt="Card image">
-                        <p>Rp. 100,000</p>
+                        <img class="card-img-top" src="{{asset('storage/product/' . $products->product_image)}}" alt="Card image">
+                        <p>{{$products->name}}</p>
+                        <p>{{$products->price}}</p>
                     <!-- </div> -->
                 </div>
-                <div class="col-sm-3">
-                    <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{URL::asset('/images/shop2.jpg')}}" alt="Card image">
-                        <p>Rp. 100,000</p>
-                    <!-- </div> -->
-                </div>
-                <div class="col-sm-3">
-                    <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{URL::asset('/images/shop3.jpg')}}" alt="Card image">
-                        <p>Rp. 100,000</p>
-                    <!-- </div> -->
-                </div>
-                <div class="col-sm-3">
-                    <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{URL::asset('/images/shop4.jpg')}}" alt="Card image">
-                        <p>Rp. 100,000</p>
-                    <!-- </div> -->
-                </div>
+              @endforeach
+
             </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{URL::asset('/images/shop4.jpg')}}" alt="Card image">
-                        <p>Rp. 100,000</p>
-                    <!-- </div> -->
-                </div>
-                <div class="col-sm-3">
-                    <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{URL::asset('/images/shop3.jpg')}}" alt="Card image">
-                        <p>Rp. 100,000</p>
-                    <!-- </div> -->
-                </div>
-                <div class="col-sm-3">
-                    <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{URL::asset('/images/shop2.jpg')}}" alt="Card image">
-                        <p>Rp. 100,000</p>
-                    <!-- </div> -->
-                </div>
-                <div class="col-sm-3">
-                    <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{URL::asset('/images/shop1.jpg')}}" alt="Card image">
-                        <p>Rp. 100,000</p>
-                    <!-- </div> -->
-                </div>
-            </div>       
         </div>
     </div>
-        
 </div>
 @endsection
