@@ -19,5 +19,13 @@ Route::get('/', function () {
 //     return view('shop');
 // });
 
+<<<<<<< HEAD
 Route::get('shop','ShopController@index');
 Route::resource('product','ProductController');
+=======
+Route::get('shop','ProductController@index');
+
+Route::get('/home', function () {
+    return view('home');
+});
+>>>>>>> ac4152afe18fa7191db1530ef86f1049dff9e0da
