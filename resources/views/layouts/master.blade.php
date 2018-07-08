@@ -30,7 +30,8 @@
 
         </div>
 
-        <img class="img-fluid"src="{{URL::asset('/images/logo_erigo.png')}}" class="mx-auto d-block">
+        <a href="/"><img class="img-fluid"src="{{URL::asset('/images/logo_erigo.png')}}" class="mx-auto d-block"></a>
+
         <!-- <h1 class="text-white">My First Bootstrap 4 Page</h1> -->
         <!-- <p class="text-white">Resize this responsive page to see the effect!</p> -->
       </div>
