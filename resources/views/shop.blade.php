@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Commerce Catalog')
+
 @section('content')
 <!-- NEWS --><br><br>
 <div class="container">
@@ -61,7 +63,6 @@
         <div class="col-sm-9">
             <div class="row">
               <!-- Isi Content -->
-              {{csrf_field()}}
               @foreach ($product as $products)
                 <div class="col-sm-3">
                     <!-- <div class="card" style="width:100%"> -->

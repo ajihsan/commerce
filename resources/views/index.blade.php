@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Commerce Website')
+
 @section('content')
 <!-- CARAOUSEL -->
     <div id="demo" class="carousel slide" data-ride="carousel">
@@ -162,4 +164,3 @@
       </div>
     </div>
     @endsection
-

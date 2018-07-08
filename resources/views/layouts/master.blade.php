@@ -5,18 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Bootstrap CSS -->
     <!-- <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="/css/custom.css"  media="screen,projection"/>
 
-    <title>Hello, world!</title>
+    <title>@yield('title')</title>
 
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid text-center bg-dark" style="margin-bottom:0">
       <div class="container">
         <div class="d-flex flex-row-reverse">
+
+          {{-- tempat buat login --}}
 
           <form class="form-inline" action="/action_page.php">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" style="border-radius: 5rem;">
