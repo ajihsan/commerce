@@ -20,3 +20,7 @@ Route::get('/', function () {
 // });
 
 Route::get('shop','ProductController@index');
+
+Route::get('/home', function () {
+    return view('home');
+});
