@@ -22,6 +22,16 @@ Route::get('/admin', function () {
   return view('/admin/home');
 });
 
+Route::get('/admin/user', function () {
+  return view('/admin/user');
+});
+Route::get('/admin/product', function () {
+  return view('/admin/product');
+});
+Route::get('/productoverview', function () {
+  return view('/user/overviewProduct');
+});
+
 Route::resource('product','ProductController');
 
 Auth::routes();
