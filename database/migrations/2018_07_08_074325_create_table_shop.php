@@ -15,9 +15,11 @@ class CreateTableShop extends Migration
     {
       Schema::create('shops', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('email');  //users
-          $table->string('name');   //products
-          $table->string('status'); //status pembayaran
+          $table->string('id_order'); //satu paket pemesanan
+          $table->string('email');    //users
+          $table->string('name');     //products
+          $table->integer('total');   //jumlah products
+          $table->string('status');   //status pembayaran
           $table->timestamps();
       });
     }

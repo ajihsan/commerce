@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use App\Mail\userRegistered;
+use Illuminate\Support\Facades\Mail;
+
 class RegisterController extends Controller
 {
     /*
@@ -55,6 +60,14 @@ class RegisterController extends Controller
         ]);
     }
 
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        return redirect('/login');
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -63,10 +76,36 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        $user = User::create([
+            'name'      => $data['name'],
+            'email'     => $data['email'],
+            'password'  => Hash::make($data['password']),
+            'token'     => str_random(20)
         ]);
+
+        Mail::to($user->email)->send(new userRegistered($user));
     }
+
+
+    public function verify_email($token, $id)
+    {
+      $user = User::find($id);
+
+      if (!$user) {
+        return redirect('login')->with('warning', 'user tidak ditemukan');
+      }
+
+      if ($user->token != $token) {
+        return redirect('login')->with('warning', 'token tidak cocok');
+      }
+
+      $user->status = 1;
+      $user->save();
+
+      $this->guard()->login($user);
+      return redirect('/');
+    }
+
+
+
 }

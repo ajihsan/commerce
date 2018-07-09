@@ -26,4 +26,6 @@ Route::resource('product','ProductController');
 
 Auth::routes();
 
+Route::get('verify/{token}/{id}', 'Auth\RegisterController@verify_email');
+
 // Route::get('/home', 'HomeController@index')->name('home');
