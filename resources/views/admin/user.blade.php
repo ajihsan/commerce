@@ -53,11 +53,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>Lorem</td>
-              <td>ipsum</td>
-              <td>dolor</td>
+            <tr> 
+            @foreach ($user as $users)
+              <td>{{$users->id}}</td>
+              <td>{{$users->name}}</td>
+              <td>{{$users->email}}</td>
+              <td>{{$users->password}}</td>            
               <td class="bg-light border-left">
                 <button type="button" class="btn btn-primary btn-sm bg-dark" data-toggle="modal" data-target="#edit">
                   <span data-feather="edit"></span>
@@ -66,63 +67,8 @@
                   <span data-feather="trash"></span>
                 </button>
               </td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>amet</td>
-              <td>consectetur</td>
-              <td>adipiscing</td>
-              <td class="bg-light border-left">
-                <button type="button" class="btn btn-primary btn-sm bg-dark" data-toggle="modal" data-target="#edit">
-                  <span data-feather="edit"></span>
-                </button>
-                <button type="button" class="btn btn-primary btn-sm bg-danger">
-                  <span data-feather="trash"></span>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>Integer</td>
-              <td>nec</td>
-              <td>odio</td>
-              <td class="bg-light border-left">
-                <button type="button" class="btn btn-primary btn-sm bg-dark" data-toggle="modal" data-target="#edit">
-                  <span data-feather="edit"></span>
-                </button>
-                <button type="button" class="btn btn-primary btn-sm bg-danger">
-                  <span data-feather="trash"></span>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>libero</td>
-              <td>Sed</td>
-              <td>cursus</td>
-              <td class="bg-light border-left">
-                <button type="button" class="btn btn-primary btn-sm bg-dark" data-toggle="modal" data-target="#edit">
-                  <span data-feather="edit"></span>
-                </button>
-                <button type="button" class="btn btn-primary btn-sm bg-danger">
-                  <span data-feather="trash"></span>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>dapibus</td>
-              <td>diam</td>
-              <td>Sed</td>
-              <td class="bg-light border-left">
-                <button type="button" class="btn btn-primary btn-sm bg-dark" data-toggle="modal" data-target="#edit">
-                  <span data-feather="edit"></span>
-                </button>
-                <button type="button" class="btn btn-primary btn-sm bg-danger">
-                  <span data-feather="trash"></span>
-                </button>
-              </td>
-            </tr>
+            </tr> 
+            @endforeach           
           </tbody>
         </table>
       </div>

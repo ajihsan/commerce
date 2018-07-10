@@ -27,9 +27,7 @@ Route::get('/admin', function () {
   return view('/admin/home');
 });
 
-Route::get('/admin/user', function () {
-  return view('/admin/user');
-});
+Route::get('admin/user', 'UserController@index');
 // Route::get('/admin/product', function () {
 //   return view('/admin/product');
 // });
