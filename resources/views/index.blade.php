@@ -42,7 +42,7 @@
           <li>
             <form class="form-inline" action="/action_page.php">
 
-              
+
               <input class="form-control mr-sm-2" type="text" placeholder="Search" style="border-radius: 5rem;">
 
             </form>

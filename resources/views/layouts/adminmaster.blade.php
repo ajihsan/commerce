@@ -36,7 +36,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="/admin">
+                <a class="nav-link {{$nav_dashboard or ''}}" href="/admin">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(current)</span>
                 </a>
@@ -48,13 +48,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/admin/product">
+                <a class="nav-link {{$nav_product or ''}}" href="/admin/product">
                   <span data-feather="shopping-cart"></span>
                   Products
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/admin/user">
+                <a class="nav-link {{$nav_user or ''}}" href="/admin/user">
                   <span data-feather="users"></span>
                   Users
                 </a>

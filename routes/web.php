@@ -15,7 +15,12 @@
 Route::get('/', function () {
     return view('index');
 });
+
 Route::get('shop','ShopController@index');
+
+Auth::routes();
+
+Route::get('verify/{token}/{id}', 'Auth\RegisterController@verify_email');
 
 // Route Admin
 Route::get('/admin', function () {
@@ -25,17 +30,16 @@ Route::get('/admin', function () {
 Route::get('/admin/user', function () {
   return view('/admin/user');
 });
-Route::get('/admin/product', function () {
-  return view('/admin/product');
-});
+// Route::get('/admin/product', function () {
+//   return view('/admin/product');
+// });
 Route::get('/productoverview', function () {
   return view('/user/overviewProduct');
 });
 
-Route::resource('product','ProductController');
+Route::resource('admin/product','ProductController');
+// kalau mau ada 2 POST di satu halaman, perlu nambahin 2 jobs di controllernya https://stackoverflow.com/questions/32279329/handle-multiple-post-requests-to-same-url-laravel-5
 
-Auth::routes();
 
-Route::get('verify/{token}/{id}', 'Auth\RegisterController@verify_email');
-
-// Route::get('/home', 'HomeController@index')->name('home');
+//Route tambahan
+Route::redirect('/home', '/');

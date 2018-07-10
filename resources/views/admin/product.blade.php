@@ -1,3 +1,5 @@
+  {{$nav_product = 'active'}}
+
 @extends('layouts.adminmaster')
 
 @section('title', 'Halaman Admin')
@@ -9,23 +11,23 @@
   </div>
   <div class="card hoverable mb-5">
     <div class="card-body">
-      <form>
+      <form class="" action="" method="post">
         <div class="form-group">
           <label for="file">Upload Photo</label>
           <div class="input-group mb-1">
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01">
+              <input type="file" class="custom-file-input" name="product_image" id="inputGroupFile01">
               <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
             </div>
           </div>
         </div>
         <div class="form-group">
           <label for="nama">Name</label>
-          <input type="text" class="form-control" id="nama" placeholder="Name">
+          <input type="text" class="form-control" name="name" id="nama" placeholder="Name">
         </div>
         <div class="form-group">
           <label for="category">Category:</label>
-          <select class="form-control" id="category">
+          <select class="form-control" name="category" id="category">
             <option>Shirt</option>
             <option>T-Shrit</option>
             <option>Panties</option>
@@ -38,8 +40,12 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">IDR</span>
             </div>
-            <input type="number" class="form-control" placeholder="" aria-label="number" aria-describedby="basic-addon1">
+            <input type="number" class="form-control" placeholder="" name="price" aria-label="number" aria-describedby="basic-addon1">
           </div>
+        </div>
+        <div class="form-group">
+          <label for="nama">Stock</label>
+          <input type="text" class="form-control" name="stock" id="stock" placeholder="Stock">
         </div>
         <button type="submit hoverable" class="btn btn-primary btn-lg btn-block">Submit</button>
       </form>

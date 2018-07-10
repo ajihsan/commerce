@@ -16,7 +16,7 @@ class ShopController extends Controller
   {
     $product = Product::all();
 
-    return view('shop', ['product' => $product]);
+    return view('user/shop', ['product' => $product]);
   }
 
 }

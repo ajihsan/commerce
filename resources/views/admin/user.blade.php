@@ -1,3 +1,5 @@
+{{$nav_user = 'active'}}
+
 @extends('layouts.adminmaster')
 
 @section('title', 'Halaman Admin')

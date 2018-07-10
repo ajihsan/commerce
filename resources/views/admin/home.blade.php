@@ -1,3 +1,5 @@
+{{$nav_dashboard = 'active'}}
+
 @extends('layouts.adminmaster')
 
 @section('title', 'Halaman Admin')
