@@ -7,7 +7,8 @@
 <div class="container">
     <div class="row">
         <!-- Sidebar -->
-        <div class="col-sm-3">
+
+        <div class="col-sm-3 filtershop fixed-filter ">
             <h3>All</h3><br>
             <form class="form-inline" action="/action_page.php">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -61,20 +62,156 @@
 
         <!-- Content -->
         <div class="col-sm-9">
-            <div class="row">
-              <!-- Isi Content -->
-              @foreach ($product as $products)
-                <div class="col-sm-3">
-                    <!-- <div class="card" style="width:100%"> -->
-                        <img class="card-img-top" src="{{asset('storage/product/' . $products->product_image)}}" alt="Card image">
-                        <p>{{$products->name}}</p>
-                        <p>{{$products->price}}</p>
-                    <!-- </div> -->
-                </div>
-              @endforeach
 
+          <!-- YANG KEMAREN  -->
+            <!-- <div class="row"> -->
+              <!-- Isi Content -->
+              <!-- @foreach ($product as $products)  -->
+                <!-- <div class="col-sm-3"> -->
+                    <!-- <div class="card" style="width:100%"> -->
+                        <!-- <img class="card-img-top" src="{{asset('storage/product/' . $products->product_image)}}" alt="Card image">
+                        <p>{{$products->name}}</p>
+                        <p>{{$products->price}}</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+              <!-- @endforeach  -->
+
+            <!-- </div> -->
+            <div class="row">
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop1.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop2.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop3.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop4.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop1.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop2.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop3.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop4.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop1.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop2.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop3.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <div class="card hoverable">
+                  <a href="#" >
+                    <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{URL::asset('/storage/product/shop4.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title center mb-0 pb-0">Fumio Flannel</h5>
+                  </a>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. 150000</small></p>
+                    </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 @endsection

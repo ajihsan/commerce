@@ -142,6 +142,14 @@
   background-repeat: no-repeat;
   object-fit: cover;
 }
+
+.center-shop {
+  width: 100%;
+  height: 400px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
 .border {
   border: 3px solid #dee2e6 !important;
 }
@@ -215,4 +223,38 @@
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
   background-color: #f5f5f5;
+}
+
+.fixed-filter {
+  position: fixed;
+  top: 2;
+  left: 0;
+  z-index: 1030;
+}
+.filtershop {
+  position: fixed;
+  top: 2;
+  /* bottom: 0;
+  left: 0; */
+  z-index: 100; /* Behind the navbar */
+  padding: 100px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+.fixed-filter {
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .fixed-filter {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+[role="main"] {
+  padding-top: 48px; /* Space for fixed navbar */
 }

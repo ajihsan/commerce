@@ -81,7 +81,7 @@
             <a class="nav-link align-middle btn-primary text-white" style="border-radius: 0.5rem;" href="{{ route('register') }}">Register</a>
           </li>
 
-          
+
 
 
 
@@ -114,11 +114,7 @@
 
 
     @yield('content')
-    <footer class="footer">
-      <div class="container text-center">
-        <span class="text-muted">Content Footer.</span>
-      </div>
-    </footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -155,6 +151,11 @@
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="text-center">
+        <span class="text-muted">Content Footer.</span>
+      </div>
+    </footer>
 
     <script type="text/javascript" src="js/custom.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -163,6 +164,11 @@
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
+    </script>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
     </script>
   </body>
 </html>
