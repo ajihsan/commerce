@@ -20,14 +20,14 @@ class ProductController extends Controller
 
     public function create()
     {
-      return view('admin/product/create');
+      return view('admin/createProduct');
     }
 
     public function store(Request $request)
     {
       //validasi
       $this->validate($request, [
-      'name'          => 'required|min:4',
+      'name'          => 'required',
       'category'      => 'required',
       'price'         => 'required',
       'product_image' => 'mimes:jpeg,jpg|max:10000'
@@ -43,6 +43,7 @@ class ProductController extends Controller
       $product->category      = $request->category;
       $product->price         = $request->price;
       $product->product_image = $fileName;
+      $product->stock         = $request->stock;
       $product->save();
 
       return redirect('admin/product');

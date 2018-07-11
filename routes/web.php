@@ -37,7 +37,9 @@ Route::get('/productoverview', function () {
   return view('/user/overviewProduct');
 });
 
-Route::resource('admin/product','ProductController');
+// Route::resource('/admin/product','ProductController');
+Route::get('/admin/product','ProductController@index');
+Route::post('/admin/product','ProductController@store');
 // kalau mau ada 2 POST di satu halaman, perlu nambahin 2 jobs di controllernya https://stackoverflow.com/questions/32279329/handle-multiple-post-requests-to-same-url-laravel-5
 
 
