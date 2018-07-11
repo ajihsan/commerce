@@ -22,7 +22,8 @@
     @yield('jumbotron')
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow  ">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand"href="/"><img class=""src="{{URL::asset('/images/logo_erigo.png')}}" class="" style=" height:30px;"></a>
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
       <!-- <a class="navbar-brand" href="#">
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Commerce
