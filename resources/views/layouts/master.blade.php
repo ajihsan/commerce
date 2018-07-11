@@ -81,20 +81,7 @@
             <a class="nav-link align-middle btn-primary text-white" style="border-radius: 0.5rem;" href="{{ route('register') }}">Register</a>
           </li>
 
-          <li class="nav-item dropdown">
-            <button class="nav-link btn btn-link" type="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="{{URL::asset('/images/a.jpg')}}" class="rounded-circle" style="height: 30px; width:30px;">
-            </button>
-            <div class="dropdown-content bg-light" aria-labelledby="navbarDropdownMenuLink">
-              <h1 class="dropdown-header mb-0 pb-0">Riza Setyawan Amadhy</h1>
-              <p class="dropdown-header mt-0 pt-0">
-                halo@rizasetyawan.com
-              </p>
-              <a class="dropdown-item text-dark" href="#">Action</a>
-              <a class="dropdown-item text-dark" href="#">Something else here</a>
-            </div>
-          </li>
-
+          
 
 
 
@@ -113,8 +100,12 @@
           <p class="dropdown-header mt-0 pt-0">
             halo@rizasetyawan.com
           </p>
-          <a class="dropdown-item text-dark" href="#">Action</a>
-          <a class="dropdown-item text-dark" href="#">Something else here</a>
+          <a class="dropdown-item text-dark" href="#">Profile</a>
+          <a class="dropdown-item text-dark" href="#">Cart</a>
+          <div class="dropdown-divider"></div>
+          <div class="center">
+            <button type="submit" name="Logout" class="btn btn-primary btn-sm " placeholder="Logout" style="width: 80%;">Logout</button>
+          </div>
         </div>
       </div>
 
