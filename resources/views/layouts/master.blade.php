@@ -22,6 +22,7 @@
     @yield('jumbotron')
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow  ">
+      <a class="navbar-brand" href="#">Navbar</a>
       <!-- <a class="navbar-brand" href="#">
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Commerce
@@ -73,21 +74,59 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  data-toggle="modal" data-target="#login">Login</a>
+            <a class="nav-link align-middle btn-primary text-white mr-2" style="border-radius: 0.5rem;" href="{{ route('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link align-middle btn-primary text-white" style="border-radius: 0.5rem;" href="{{ route('register') }}">Register</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="nav-link btn btn-link" type="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="{{URL::asset('/images/a.jpg')}}" class="rounded-circle" style="height: 30px; width:30px;">
+            </button>
+            <div class="dropdown-content bg-light" aria-labelledby="navbarDropdownMenuLink">
+              <h1 class="dropdown-header mb-0 pb-0">Riza Setyawan Amadhy</h1>
+              <p class="dropdown-header mt-0 pt-0">
+                halo@rizasetyawan.com
+              </p>
+              <a class="dropdown-item text-dark" href="#">Action</a>
+              <a class="dropdown-item text-dark" href="#">Something else here</a>
+            </div>
           </li>
 
 
 
 
         </ul>
+
       </div>
-      <!-- <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
+      <div class="btn-group dropleft">
+        <!-- <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropleft
+        </button> -->
+        <button class="nav-link btn btn-link" type="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="{{URL::asset('/images/a.jpg')}}" class="rounded-circle hoverable" style="height: 30px; width:30px;">
+        </button>
+        <div class="dropdown-menu">
+          <h1 class="dropdown-header mb-0 pb-0">Riza Setyawan Amadhy</h1>
+          <p class="dropdown-header mt-0 pt-0">
+            halo@rizasetyawan.com
+          </p>
+          <a class="dropdown-item text-dark" href="#">Action</a>
+          <a class="dropdown-item text-dark" href="#">Something else here</a>
+        </div>
+      </div>
+
+
     </nav>
 
+
     @yield('content')
+    <footer class="footer">
+      <div class="container text-center">
+        <span class="text-muted">Content Footer.</span>
+      </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -124,6 +163,7 @@
         </div>
       </div>
     </div>
+
     <script type="text/javascript" src="js/custom.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
