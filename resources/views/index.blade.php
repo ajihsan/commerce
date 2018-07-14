@@ -10,7 +10,7 @@
 
       {{-- tempat buat login --}}
       <!-- Right Side Of Navbar -->
-      <ul class="navbar-nav ml-auto">
+      {{-- <ul class="navbar-nav ml-auto">
           <!-- Authentication Links -->
           @guest
 
@@ -40,7 +40,7 @@
               </li>
           @endguest
 
-      </ul>
+      </ul> --}}
 
 
 

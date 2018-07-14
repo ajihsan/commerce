@@ -74,12 +74,12 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link align-middle btn-primary text-white mr-2" style="border-radius: 0.5rem;" href="{{ route('login') }}">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link align-middle btn-primary text-white" style="border-radius: 0.5rem;" href="{{ route('register') }}">Register</a>
-          </li>
+          </li> --}}
 
 
 
@@ -89,24 +89,39 @@
 
       </div>
       <div class="btn-group dropleft">
+        @guest
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link align-middle btn-primary text-white mr-2" style="border-radius: 0.5rem;" href="{{ route('login') }}">{{ __('Login') }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link align-middle btn-primary text-white" style="border-radius: 0.5rem;" href="{{ route('register') }}">{{ __('Register') }}</a>
+          </li>
         <!-- <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropleft
         </button> -->
+        @else
         <button class="nav-link btn btn-link" type="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img src="{{URL::asset('/images/a.jpg')}}" class="rounded-circle hoverable" style="height: 30px; width:30px;">
         </button>
         <div class="dropdown-menu">
-          <h1 class="dropdown-header mb-0 pb-0">Riza Setyawan Amadhy</h1>
+          <h1 class="dropdown-header mb-0 pb-0">{{ Auth::user()->name }}</h1>
           <p class="dropdown-header mt-0 pt-0">
-            halo@rizasetyawan.com
+            {{ Auth::user()->email }}
           </p>
           <a class="dropdown-item text-dark" href="#">Profile</a>
           <a class="dropdown-item text-dark" href="#">Cart</a>
           <div class="dropdown-divider"></div>
           <div class="center">
-            <button type="submit" name="Logout" class="btn btn-primary btn-sm " placeholder="Logout" style="width: 80%;">Logout</button>
+            <button type="submit" class="btn btn-primary btn-sm " href="{{ route('logout') }}" onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();" placeholder="Logout" style="width: 80%;">{{ __('Logout') }}
+            </button>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
           </div>
         </div>
+        @endguest
       </div>
 
 
