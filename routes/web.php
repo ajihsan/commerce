@@ -23,21 +23,18 @@ Auth::routes();
 Route::get('verify/{token}/{id}', 'Auth\RegisterController@verify_email');
 
 // Route Admin
-Route::get('/admin', function () {
-  return view('/admin/home');
+Route::group(['middleware' => 'admin'], function() {
+Route::get('/admin', 'AdminController@dashboard');
+Route::get('admin/user', 'UserController@index');
+Route::get('/admin/product','ProductController@index');
+Route::post('/admin/product','ProductController@findAction');
 });
 
-Route::get('admin/user', 'UserController@index');
-// Route::get('/admin/product', function () {
-//   return view('/admin/product');
-// });
+
 Route::get('/productoverview', function () {
   return view('/user/overviewProduct');
 });
 
-// Route::resource('/admin/product','ProductController');
-Route::get('/admin/product','ProductController@index');
-Route::post('/admin/product','ProductController@findAction');
 // kalau mau ada 2 POST di satu halaman, perlu nambahin 2 jobs di controllernya https://stackoverflow.com/questions/32279329/handle-multiple-post-requests-to-same-url-laravel-5
 
 

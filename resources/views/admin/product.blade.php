@@ -107,7 +107,7 @@
                 <li class="list-group-item">Stock: {{$product->stock}}</li>
               </ul>
               <div class="card-body">
-                <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">Edit</a>
+                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit" data-name="{{$product->name}}" data-price="{{$product->price}}" data-stock="{{$product->stock}}">Edit</button>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@
                 <li class="list-group-item">Stock: {{$product->stock}}</li>
               </ul>
               <div class="card-body">
-                <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">Edit</a>
+                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit" data-name="{{$product->name}}" data-price="{{$product->price}}" data-stock="{{$product->stock}}">Edit</button>
               </div>
             </div>
           </div>
@@ -155,7 +155,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header bg-light">
-            <h5 class="modal-title" id="edit">Edit Product</h5>
+            <h5 class="modal-title" id="editLabel">Edit Product</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -165,21 +165,21 @@
               <div class="card-body">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="name">Product Name</span>
+                      <span class="input-group-text" for="edit-name">Product Name</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="" aria-label="Name" aria-describedby="name" value="">
+                    <input type="text" class="form-control" placeholder="" aria-label="Name" aria-describedby="name" id="edit-name">
                   </div>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="price">IDR</span>
+                      <span class="input-group-text" for="edit-price">IDR</span>
                     </div>
-                    <input type="number" class="form-control" placeholder="" aria-label="price" aria-describedby="price">
+                    <input type="number" class="form-control" placeholder="" aria-label="price" aria-describedby="price" id="edit-price">
                   </div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <span class="input-group-text" id="stock">Stock</span>
+                        <span class="input-group-text" for="edit-stock">Stock</span>
                       </div>
-                      <input type="text" class="form-control" placeholder="" aria-label="stock" aria-describedby="stock">
+                      <input type="text" class="form-control" placeholder="" aria-label="stock" aria-describedby="stock" id="edit-stock">
                     </div>
               </div>
             </div>
@@ -192,3 +192,17 @@
       </div>
     </div>
 </main>
+
+{{-- <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript">
+      $('#edit').on('click','show.bs.modal', function (event) {
+      var button = $(event.relatedTarget); // Button that triggered the modal
+      var name = button.data('name'); // Extract info from data-* attributes
+      var price = button.data('price');
+      var stock = button.data('stock');
+
+      var modal = $(this);
+      modal.find('.modal-title').text('Product ' + name);
+      $("#edit #edit-name").val(name);
+      });
+</script> --}}
