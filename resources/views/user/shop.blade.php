@@ -81,12 +81,12 @@
               @foreach ($product as $products)
               <div class="col-sm-3 mb-4">
                 <div class="card hoverable">
-                  <a href="#" >
+                  <a href="/shop/{{$products->id}}">
                     <img class="center-shop" data-toggle="tooltip" data-placement="top" title="Hooray!" src="{{asset('storage/product/' . $products->product_image)}}" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title center mb-0 pb-0">{{$products->name}}</h5>
                   </a>
-                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. {{$products->price}}</small></p>
+                      <p class="card-text center mt-0 pt-0"><small class="text-muted">IDR. {{number_format($products->price)}}</small></p>
                     </div>
                 </div>
               </div>

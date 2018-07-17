@@ -15,7 +15,7 @@
         </ul>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="rounded center-cropped" src="{{URL::asset('/images/a.jpg')}}" alt="Los Angeles" width="1100" height="500">
+            <img class="rounded center-cropped" src="{{asset('storage/product/' . $product->product_image)}}" alt="Los Angeles" width="1100" height="500">
             <div class="carousel-caption">
               <h3>Los Angeles</h3>
               <p>We had such a great time in LA!</p>
@@ -64,8 +64,8 @@
       </div>
     </div>
     <div class="col-sm-4  ">
-      <h2 class="ml-0">Resolve New Year</h2>
-      <h1 class="small mb-4">IDR 100.000</h1>
+      <h2 class="ml-0">{{$product->name}}</h2>
+      <h1 class="small mb-4">IDR {{number_format($product->price)}}</h1>
       <div class="row ml-1 mr-1">
         <div class="col-sm-6 border border-left-0 border-right-0 center small">
           <div class="mb-4 mt-4">

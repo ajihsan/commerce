@@ -45,7 +45,7 @@
         <table class="table table-hover table-sm">
           <thead class="thead-dark">
             <tr>
-              <th>#</th>
+              <th>ID</th>
               <th>Nama</th>
               <th>Email</th>
               <th>Password</th>
@@ -53,12 +53,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr> 
+            <tr>
             @foreach ($user as $users)
+              @continue ($users->role == 2)
+
               <td>{{$users->id}}</td>
               <td>{{$users->name}}</td>
               <td>{{$users->email}}</td>
-              <td>{{$users->password}}</td>            
+              <td>{{$users->password}}</td>
               <td class="bg-light border-left">
                 <button type="button" class="btn btn-primary btn-sm bg-dark" data-toggle="modal" data-target="#edit">
                   <span data-feather="edit"></span>
@@ -67,8 +69,8 @@
                   <span data-feather="trash"></span>
                 </button>
               </td>
-            </tr> 
-            @endforeach           
+            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

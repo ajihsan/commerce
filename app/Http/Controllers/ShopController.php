@@ -19,4 +19,15 @@ class ShopController extends Controller
     return view('user/shop', ['product' => $product]);
   }
 
+  public function overview($id)
+  {
+    $product = Product::find($id);
+
+    if (!$product)
+    {
+      abort(404);
+    }
+    return view('/user/overviewProduct', ['product' => $product]);
+  }
+
 }
